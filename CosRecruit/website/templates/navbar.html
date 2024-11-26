@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home'%}">CosHouse</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+
+          {% if user.is_authenticated %}
+
+          <!-- NEW RECORD PAGE -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'add_record' %}">NEW</a>
+          </li>
+
+          <!-- LOGOUT PAGE -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Logout' %}">LOGOUT</a>
+          </li>
+
+          {% else %}
+
+          <!-- LOGIN HOMEPAGE -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Welcome!</a>
+          </li> -->
+
+          <!-- REGISTER PAGE -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Register' %}">REGISTER</a>
+          </li>
+          {% endif %}
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
